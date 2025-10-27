@@ -1,0 +1,45 @@
+{% extends 'boards/base.html' %}
+{% load static %}
+{% block title %}Shop - INSTYLE{% endblock %}
+
+{% block content %}
+<h2 class="text-center mb-4 fw-bold">Our Products</h2>
+
+<div class="row justify-content-center">
+  <!-- Product 1 -->
+  <div class="col-md-4 col-sm-6 mb-4">
+    <div class="card product-card h-100 shadow-sm border-dark">
+      <img src="{% static 'boards/img/gown.jpg' %}" class="card-img-top" alt="Filipiniana Gown">
+      <div class="card-body text-center">
+        <h5 class="card-title fw-semibold">Filipiniana Gown</h5>
+        <p class="text-muted mb-2">₱3,500</p>
+        <a href="{% url 'product_detail' 1 %}" class="btn btn-dark btn-sm px-4">View</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product 2 -->
+  <div class="col-md-4 col-sm-6 mb-4">
+    <div class="card product-card h-100 shadow-sm border-dark">
+      <img src="{% static 'boards/img/barong.jpg' %}" class="card-img-top" alt="Barong Tagalog">
+      <div class="card-body text-center">
+        <h5 class="card-title fw-semibold">Barong Tagalog</h5>
+        <p class="text-muted mb-2">₱2,800</p>
+        <a href="{% url 'product_detail' 2 %}" class="btn btn-dark btn-sm px-4">View</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product 3 -->
+  <div class="col-md-4 col-sm-6 mb-4">
+    <div class="card product-card h-100 shadow-sm border-dark">
+      <img src="{% static 'boards/img/barotsaya.jpg' %}" class="card-img-top" alt="Baro’t Saya">
+      <div class="card-body text-center">
+        <h5 class="card-title fw-semibold">Baro’t Saya</h5>
+        <p class="text-muted mb-2">₱3,000</p>
+        <a href="{% url 'product_detail' 3 %}" class="btn btn-dark btn-sm px-4">View</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

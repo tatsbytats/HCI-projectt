@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ product.name }} | INSTYLE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container { margin-top: 50px; }
+        .product-image { width: 100%; border-radius: 5px; }
+        .price { font-size: 1.5rem; font-weight: bold; }
+        .star { color: gold; }
+        .btn-custom {
+            border-radius: 25px;
+            padding: 10px 25px;
+            font-weight: 500;
+        }
+        .btn-cart {
+            background-color: white;
+            border: 1px solid #007bff;
+            color: #007bff;
+        }
+        .btn-cart:hover {
+            background-color: #007bff;
+            color: white;
+        }
+        .btn-buy {
+            background-color: #007bff;
+            color: white;
+        }
+        .btn-buy:hover {
+            background-color: #0056b3;
+        }
+        .similar-products img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .review {
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <!-- Left: Product Image -->
+        <div class="col-md-6 text-center">
+            <img src="{% static product.image %}" alt="Product Image" class="product-image mb-3">
+            <div>
+                <img src="{% static product.image %}" width="60">
+                <img src="{% static product.image %}" width="60">
+                <img src="{% static product.image %}" width="60">
+            </div>
+        </div>
+
+        <!-- Right: Product Details -->
+        <div class="col-md-6">
+            <h3>{{ product.name }}</h3>
+            <p>
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
+                (5 reviews)
+            </p>
+
+            <div class="mb-3">
+                <label for="size" class="form-label">Select size:</label>
+                <select id="size" class="form-select" style="width: 150px;">
+                    <option>Small</option>
+                    <option>Medium</option>
+                    <option>Large</option>
+                </select>
+            </div>
+
+            <p class="price">₱3,500</p>
+
+            <!-- Add to Cart & Buy Now Buttons (Now Clickable) -->
+            <div class="d-flex gap-2">
+                <a href="{% url 'add_to_cart' category product.name %}" class="btn btn-custom btn-cart">Add to Cart</a>
+                <a href="{% url 'checkout' product.name %}" class="btn btn-custom btn-buy">Buy now</a>
+            </div>
+
+            <div class="mt-4">
+                <h5>Description</h5>
+                <p>{{ product.description }}</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Similar Products -->
+    <div class="mt-5">
+        <h5>Similar Products</h5>
+        <div class="row text-center similar-products">
+            <div class="col">
+                <p>Barong Tagalog</p>
+                <p>₱2,800</p>
+            </div>
+            <div class="col">
+                <p>Baro’t Saya</p>
+                <p>₱3,000</p>
+            </div>
+            <div class="col">
+                <p>Filipiniana Modern</p>
+                <p>₱3,200</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reviews -->
+    <div class="mt-5">
+        <h5>Reviews</h5>
+        <div class="review">
+            <strong>Maria Cruz</strong> – Jan 5, 2024<br>
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
+            <p>Beautiful gown! Fits perfectly.</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

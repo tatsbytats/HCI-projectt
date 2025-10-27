@@ -1,0 +1,153 @@
+{% extends 'boards/base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #fff;
+    }
+    .checkout-container {
+        max-width: 500px;
+        margin: 30px auto;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        overflow: hidden;
+    }
+    .checkout-header {
+        background-color: #c49b6c;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .checkout-body {
+        padding: 20px;
+    }
+    .product-info {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+    .product-info img {
+        width: 80px;
+        height: 80px;
+        border-radius: 8px;
+        object-fit: cover;
+    }
+    .product-details p {
+        margin: 4px 0;
+    }
+    .section {
+        margin-bottom: 20px;
+    }
+    .section h5 {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    .order-summary {
+        border-top: 1px solid #ddd;
+        padding-top: 15px;
+        font-size: 15px;
+    }
+    .order-summary div {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+    }
+    .total {
+        font-weight: bold;
+        font-size: 16px;
+        color: #000;
+    }
+    .text-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .place-order-btn {
+        background-color: #c5a572; 
+        color: #fff;
+        font-weight: 600;
+        font-size: 1rem;
+        padding: 12px 35px;
+        border-radius: 30px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border: none;
+        box-shadow: 0 6px 14px rgba(197, 165, 114, 0.4);
+        transition: all 0.3s ease-in-out;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .place-order-btn:hover {
+        background-color: #b8955e; 
+        transform: scale(1.07);
+        box-shadow: 0 8px 18px rgba(197, 165, 114, 0.6);
+        color: #fff;
+        text-decoration: none;
+    }
+
+    body {
+        background-color: #f9f9f9;
+    }
+</style>
+
+<div class="checkout-container">
+    <div class="checkout-header">
+        Checkout
+    </div>
+
+    <div class="checkout-body">
+        <div class="product-info">
+            <img src="{% static 'images/default_product.jpg' %}" alt="Product">
+            <div class="product-details">
+                <p><strong>{{ product_name }}</strong></p>
+                <p style="color:#007b00;">₱3,000</p>
+                <p>Qty: 
+                    <select style="border:1px solid #ddd; padding:3px; border-radius:5px;">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h5>Shipping Option</h5>
+            <div class="d-flex justify-content-between">
+                <p>Standard Local Delivery</p>
+                <p>₱55</p>
+            </div>
+            <small style="color:#777;">Receive by 30 Nov - 3 Dec</small>
+        </div>
+
+        <div class="section">
+            <h5>Message</h5>
+            <textarea rows="2" style="width:100%; border:1px solid #ddd; border-radius:5px; padding:8px;" placeholder="Please leave a message..."></textarea>
+        </div>
+
+        <div class="order-summary">
+            <div><span>Merchandise Subtotal</span><span>₱3,000</span></div>
+            <div><span>Shipping Subtotal</span><span>₱55</span></div>
+            <div class="total"><span>Total Payment</span><span>₱3,055</span></div>
+        </div>
+    <div class="text-center mt-4">
+    <a href="{% url 'thank_you' %}" class="btn btn-custom btn-buy place-order-btn">Place Order</a>
+</div>
+
+<script>
+function placeOrder() {
+    alert('✅ Order placed successfully!');
+    window.location.href = "{% url 'shop' %}";
+}
+</script>
+{% endblock %}

@@ -1,0 +1,130 @@
+{% extends 'boards/base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    body {
+        background-color: #f9f9f9;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .thankyou-container {
+        max-width: 500px;
+        margin: 60px auto;
+        background-color: #ffffff;
+        border-radius: 15px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        padding: 40px 30px;
+    }
+
+    .thankyou-icon {
+        font-size: 60px;
+        color: #c5a572; /* gold-beige */
+        margin-bottom: 15px;
+    }
+
+    .thankyou-header {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .thankyou-text {
+        color: #555;
+        margin-bottom: 25px;
+    }
+
+    .order-tracking {
+        margin: 25px 0;
+        text-align: left;
+    }
+
+    .order-tracking h5 {
+        font-weight: bold;
+        color: #444;
+        margin-bottom: 10px;
+    }
+
+    .timeline {
+        position: relative;
+        border-left: 2px solid #c5a572;
+        padding-left: 20px;
+    }
+
+    .timeline-step {
+        position: relative;
+        margin-bottom: 25px;
+    }
+
+    .timeline-step::before {
+        content: "";
+        position: absolute;
+        left: -8px;
+        top: 4px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #c5a572;
+    }
+
+    .timeline-step p {
+        margin: 0;
+        font-size: 14px;
+        color: #555;
+    }
+
+    /* Button styling */
+    .back-home-btn {
+        background-color: #c5a572;
+        color: white;
+        font-weight: 600;
+        font-size: 1rem;
+        padding: 12px 35px;
+        border-radius: 30px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border: none;
+        box-shadow: 0 6px 14px rgba(197, 165, 114, 0.4);
+        transition: all 0.3s ease-in-out;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 20px;
+    }
+
+    .back-home-btn:hover {
+        background-color: #b8955e;
+        transform: scale(1.07);
+        box-shadow: 0 8px 18px rgba(197, 165, 114, 0.6);
+        color: #fff;
+        text-decoration: none;
+    }
+</style>
+
+<div class="thankyou-container">
+    <div class="thankyou-icon">✔️</div>
+    <div class="thankyou-header">Thank You for Your Order!</div>
+    <p class="thankyou-text">Your order has been successfully placed. You will receive an email confirmation shortly.</p>
+
+    <div class="order-tracking">
+        <h5>Order Tracking</h5>
+        <div class="timeline">
+            <div class="timeline-step">
+                <p><strong>Order Confirmed</strong> – Your order has been received.</p>
+            </div>
+            <div class="timeline-step">
+                <p><strong>Processing</strong> – We’re preparing your items for shipment.</p>
+            </div>
+            <div class="timeline-step">
+                <p><strong>Shipped</strong> – Your package is on its way.</p>
+            </div>
+            <div class="timeline-step">
+                <p><strong>Delivered</strong> – Expected in 3–5 business days.</p>
+            </div>
+        </div>
+    </div>
+
+    <a href="{% url 'home' %}" class="back-home-btn">Back to Home</a>
+</div>
+{% endblock %}

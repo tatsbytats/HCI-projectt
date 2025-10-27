@@ -1,0 +1,14 @@
+body {
+  background-color: #f8f9fa;
+}
+
+.card img {
+  height: 300px;
+  object-fit: cover;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}

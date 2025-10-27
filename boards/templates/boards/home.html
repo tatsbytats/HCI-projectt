@@ -1,0 +1,9 @@
+{% extends 'boards/base.html' %}
+{% load static %}
+{% block content %}
+<div class="text-center mt-5">
+  <h1>Welcome to INSTYLE!</h1>
+  <p>Your go-to shop for modern fashion trends.</p>
+  <a href="{% url 'shop' %}" class="btn btn-primary mt-3">Shop Now</a>
+</div>
+{% endblock %}

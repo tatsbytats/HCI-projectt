@@ -1,0 +1,25 @@
+{% extends "boards/base.html" %}
+{% load static %}
+{% block title %}Place Order{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <h2>Place Order</h2>
+    <form>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" id="cod" name="payment" checked />
+        <label class="form-check-label" for="cod">Cash On Delivery</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" id="gcash" name="payment" />
+        <label class="form-check-label" for="gcash">GCash</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" id="credit" name="payment" />
+        <label class="form-check-label" for="credit">Credit Card</label>
+      </div>
+      <button type="submit" class="btn btn-primary mt-3">Confirm Order</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
