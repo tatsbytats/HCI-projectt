@@ -109,9 +109,9 @@
 
   <!-- Banner -->
   <div class="container mt-4 text-center">
-    <img src="{% static 'images/banner.jpg' %}" alt="Product Banner" class="banner">
+    <img src="{% static 'boards/img/banner.jpg' %}" alt="Product Banner" class="banner" onerror="this.src='{% static 'boards/img/tshirt.jpg' %}'">
     <h2 class="mt-4 fw-bold">Product Description</h2>
-    <p>Filipiniana Gowns, Barongs, and Barot’ Saya for all occasions</p>
+    <p>Filipiniana Gowns, Barongs, and Barot' Saya for all occasions</p>
     <a href="#" class="btn btn-dark mt-2">Shop Now</a>
 
     <div class="text-center my-4">
@@ -119,7 +119,7 @@
       <a href="{% url 'women' %}" class="btn btn-outline-dark rounded-pill mx-2">WOMEN</a>
       <a href="{% url 'kids' %}" class="btn btn-outline-dark rounded-pill mx-2">KIDS</a>
     </div>
-</div>
+  </div>
 
   <!-- Product Cards -->
   <div class="container mt-4">
